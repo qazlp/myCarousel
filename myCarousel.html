@@ -4,43 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Carousel</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>My first Carousel</h1>
 
     
     <section class="carousel">
-        <ul>
-            <li class="slides">
-                <div class="slide-1">
-                    <blockquote class="blockquote-1">
-                        <p>the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    </blockquote>
-                </div>
+     <div class="slider">
+        <ul class="slides">
+            <li id="slide-1" class="slide fade">
+                <blockquote class="blockquote-1">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent in mauris eu tortor porttitor accumsan. Aliquam erat volutpat. Vivamus luctus egestas leo. Maecenas aliquet accumsan leo. Curabitur ligula sapien, pulvinar a vestibulum quis, facilisis vel sapien. Aliquam erat volutpat.</p>
+                </blockquote>
             </li>
-            <li class="slides">
-                <div class="slide-2">
-                    <blockquote class="blockquote-2">
-                        <p>the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    </blockquote>
-                </div>
+            <li id="slide-2" class="slide fade">
+                <blockquote class="blockquote-2">
+                    <p>Donec iaculis gravida nulla. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Praesent in mauris eu tortor porttitor accumsan.</p>
+                </blockquote>
             </li>
-            <li class="slides">
-                <div class="slide-3">
-                    <blockquote class="blockquote-3">
-                        <p>the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    </blockquote>
-                </div> 
+            <li id="slide-3" class="slide fade">
+                <blockquote class="blockquote-3">
+                    <p>the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </blockquote>
             </li>
-            <li class="slides">
-                <div class="slide-4">
-                    <blockquote class="blockquote-4">
-                        <p>the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    </blockquote>
-                </div>
+            <li id="slide-4" class="slide">
+                <blockquote class="blockquote-4">
+                    <p>the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </blockquote>
             </li>
         </ul>
+    </div>
     </section>
-    
+    <script>
+        let slideIndex = 0; 
+        showSlides();
+
+        function showSlides() {
+            let i; 
+            let slides = document.getElementsByClassName("slide");
+            for(i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+            slideIndex++; 
+            if(slideIndex > slides.length) {slideIndex = 1} 
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000)
+        }
+    </script>
 </body>
 </html>
